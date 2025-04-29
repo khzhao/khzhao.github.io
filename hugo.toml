@@ -1,0 +1,4 @@
+baseURL = 'https://khzhao.github.io'
+languageCode = 'en-us'
+title = "KZ's Blog"
+theme = 'hugo-bearblog'
