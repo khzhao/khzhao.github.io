@@ -16,3 +16,10 @@ This is a page about »Frustrations«.
 def add(a, b):
     return a + b
 ```
+
+\begin{align}
+a &= 2 \\\\
+b &= 3 \\\\
+x + y + z + a + b + c &= 4
+\end{align}
+
