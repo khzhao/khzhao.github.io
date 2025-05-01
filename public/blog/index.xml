@@ -6,14 +6,14 @@
     <description>Recent content in Blogs on KZ&#39;s Brain Dump</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Apr 2025 18:32:37 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 01 May 2025 00:36:15 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Frustrations</title>
-      <link>http://localhost:1313/blog/frustrations/</link>
-      <pubDate>Tue, 29 Apr 2025 18:32:37 -0400</pubDate>
-      <guid>http://localhost:1313/blog/frustrations/</guid>
-      <description>&lt;p&gt;This is a page about »Frustrations«.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;(a, b):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; b&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;\begin{align}&#xA;a &amp;amp;= 2 \\&#xA;b &amp;amp;= 3 \\&#xA;x + y + z + a + b + c &amp;amp;= 4&#xA;\end{align}&lt;/p&gt;</description>
+      <title>Matching Socks</title>
+      <link>http://localhost:1313/blog/2025-05-01-matching-socks/</link>
+      <pubDate>Thu, 01 May 2025 00:36:15 -0400</pubDate>
+      <guid>http://localhost:1313/blog/2025-05-01-matching-socks/</guid>
+      <description>&lt;p&gt;Are you the type of person to optimize their morning routine? I ask because some of my friends have optimized their morning routine to a tee. In fact, they only purchase the same pair of socks to stock their drawers. This way they never need to fumble around to find matching pairs of socks. Personally, I don&amp;rsquo;t mind doing this that much. What gets me is the fact that I don&amp;rsquo;t need to spend nearly as much time as I do folding laundry. Amortized across days finding matching socks is fine but on laundry day, you get hit with the full-on cost of having diversity in your sock collection. Thinking about this made me remember something from some of my classes at Harvard&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
