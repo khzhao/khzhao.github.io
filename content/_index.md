@@ -8,7 +8,7 @@ Hi, I'm Kevin Zhao. Welcome to where I dump everything that I find interesting, 
 You can reach me via email at khzhao [at] u [dot] northwestern [dot] edu.
 
 Currently:
-- PhD student @Northwestern in the [MAGICS Lab](https://magics.cs.northwestern.edu/)
+- [redacted] Gardening my plants
 
 In a past life:
 - Quantitative Researcher @[Vatic Labs](https://www.linkedin.com/company/vaticlabs/) on the high frequency trading desk
