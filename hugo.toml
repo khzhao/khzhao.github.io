@@ -1,4 +1,8 @@
 baseURL = 'https://khzhao.github.io'
 languageCode = 'en-us'
-title = "KZ's Blog"
+title = "KZ's Brain Dump"
 theme = 'hugo-bearblog'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
