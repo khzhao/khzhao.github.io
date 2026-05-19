@@ -1,0 +1,60 @@
+{{- /*
+  Recursive ASCII directory-tree TOC.
+
+  Emits one text line per heading in the canonical `tree(1)` style:
+
+      ├── First section
+      ├── Second section
+      │   └── Subsection
+      └── Last section
+
+  To exclude a heading, prefix its ID with "notoc-":
+
+      ### Appendix {#notoc-appendix}
+
+  The heading renders normally in the post body; the prefix is only used
+  here as a filter signal. The displayed title is unaffected.
+
+  How it works:
+
+  - `prefix` accumulates one connector cell per ancestor depth: "│   " when
+    the corresponding ancestor still has siblings to come, "    " when it
+    does not. Combined with the leading "├── " / "└── " marker for the
+    current heading, this draws correct continuation rails at every level.
+
+  - Phantom headings (entries with no .ID, which Hugo inserts to fill in
+    skipped levels) are silently spliced through: their children inherit
+    the phantom's prefix and continue rendering at the parent's depth.
+
+  - The visible list is pre-filtered before computing last-index so that
+    └── always lands on the last visible entry.
+
+  Context: dict
+    "headings" - slice of page.Heading
+    "prefix"   - accumulated string of ancestor connector cells
+*/ -}}
+{{- $prefix := .prefix | default "" -}}
+
+{{- $visible := slice -}}
+{{- range .headings -}}
+  {{- if not (and .ID (hasPrefix .ID "notoc-")) -}}
+    {{- $visible = append . $visible -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $count := len $visible -}}
+{{- range $index, $heading := $visible -}}
+  {{- $is_last := eq (add $index 1) $count -}}
+  {{- if $heading.ID -}}
+    {{- $marker := cond $is_last "└── " "├── " -}}
+    {{- printf "%s%s<a href=\"#%s\">%s</a>\n" $prefix $marker $heading.ID $heading.Title | safeHTML -}}
+    {{- with $heading.Headings -}}
+      {{- $child_prefix := printf "%s%s" $prefix (cond $is_last "    " "│   ") -}}
+      {{- partial "toc-tree.html" (dict "headings" . "prefix" $child_prefix) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with $heading.Headings -}}
+      {{- partial "toc-tree.html" (dict "headings" . "prefix" $prefix) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
