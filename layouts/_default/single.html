@@ -1,0 +1,83 @@
+{{ define "main" }}
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<h1>{{ .Title }}</h1>
+<p>
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}'>
+      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+    </time>
+  </i>
+</p>
+{{/* Opt-in TOC: set `toc = true` in the front matter. Headings are rendered
+     as an ASCII directory-tree by the recursive `toc-tree` partial. */}}
+{{ if .Params.toc }}{{ with .Fragments.Headings }}
+<aside class="post-toc" aria-label="Table of contents">
+  <details open>
+    <summary>contents/</summary>
+    <nav><pre class="toc-tree">{{- partial "toc-tree.html" (dict "headings" .) -}}</pre></nav>
+  </details>
+</aside>
+{{ end }}{{ end }}
+{{ end }}{{ end }}
+<content>
+  {{ .Content }}
+</content>
+<p>
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+<style>
+  /* ASCII directory-tree TOC. Dashed rules match the theme's <hr>; the
+     label and tree share a monospace face so the whole block reads like a
+     `tree` listing dropped into the post. */
+  .post-toc {
+    margin: 2em 0;
+    padding: 0.75em 0;
+    border-top: 1px dashed;
+    border-bottom: 1px dashed;
+  }
+
+  .post-toc summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    font-family: "Courier New", monospace;
+    font-style: italic;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+  .post-toc summary::-webkit-details-marker { display: none; }
+  .post-toc summary::marker { content: ""; }
+
+  .post-toc nav { margin-top: 0.6em; }
+
+  /* The <pre> carries the rendered tree text. Reset the theme's code-block
+     styling so it sits inline with the page rather than as a dark slab. */
+  .post-toc .toc-tree {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--text-color);
+    font-family: "Courier New", monospace;
+    font-size: 1.05em;
+    line-height: 1.55;
+    overflow-x: auto;
+  }
+
+  /* Plain text by default; dotted underline on hover keeps a bookish feel
+     without disturbing the alignment of the tree characters. */
+  .post-toc .toc-tree a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.12s ease, border-color 0.12s ease;
+  }
+  .post-toc .toc-tree a:hover,
+  .post-toc .toc-tree a:focus {
+    color: var(--link-color);
+    border-bottom-color: var(--link-color);
+  }
+</style>
+{{ end }}
