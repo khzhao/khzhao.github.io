@@ -1,8 +1,24 @@
 baseURL = 'https://khzhao.github.io'
-languageCode = 'en-us'
+locale = 'en-us'
 title = "KZ's Brain Dump"
 theme = 'hugo-bearblog'
 
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+# Treat LaTeX inside math delimiters as opaque to the Markdown parser, so
+# `x_i`, `a*b`, `\\`, etc. survive untouched and reach MathJax verbatim.
+# This is the "write LaTeX like Overleaf" switch.
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block  = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+    [markup.goldmark.renderer]
+      # Allow raw HTML inside Markdown (useful for the occasional <br/>,
+      # <details>, or hand-written equation environment).
+      unsafe = true
