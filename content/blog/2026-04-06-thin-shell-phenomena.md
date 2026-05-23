@@ -21,6 +21,6 @@ By Jensen's inequality, we know that:
 $$E||X||_2 \leq \sqrt{n}$$
 So off the bat, we know that the norm is in expectation bounded by $\sqrt{n}$. But actually, there's a more powerful result which says that actually the L2 norm concentrates around $\sqrt{n}$! Note that if $X$ is a sub-gaussian vector and isotropic, then $||X||_2^2$ is an sub-exponential random variable! We can apply Bernstein's inequality and show that the norm follows a sub-gaussian concentration around $\sqrt{n}$! This means the norm $\approx O(\sqrt{n})$ with high probability and because there is a sub-gaussian concentration bound, we know that:
 
-$$E[||X||\_2 - \sqrt{n}] \leq O(C||X||_{\psi_2})$$
+$$E[||X||_2 - \sqrt{n}] \leq O(C||X||_{\psi_2})$$
 
 where $||X||_{\psi_2}$ is the $\psi_2$ norm of $X$.

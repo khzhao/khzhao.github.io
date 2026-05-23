@@ -11,9 +11,9 @@ tags = []
 +++
 
 When I was an undergraduate, there were lots of identities that I just memorized without paying much attention to how they were derived. Sometimes this is completely fine especially if they are not critical for understanding **core** concepts. One result that contradicted this philosophy was the Sherman-Morrison-Woodbury identity. The identity can be simply stated as follows:
-\begin{align*}
+$$\begin{align*}
 (A + UCV)^{-1} = A^{-1} - A^{-1}U(C^{-1} + V A^{-1}U)^{-1}V A^{-1}
-\end{align*}
+\end{align*}$$
 
 where $A^{-1}, C^{-1}$ are known and $U, V$ are low-rank matrices. You may be more familiar with a special case of the identity for rank-1 updates:
 $$(I + uv^T)^{-1} = I - \frac{uv^T}{1 + v^T u}$$
@@ -22,7 +22,7 @@ Learning how to derive this is quite useful for intuition. The identities come u
 $$(A + uv^T)x = b$$
 
 We note that for general block matrix inversion where $S = A - BD^{-1}C$:
-$$\begin{bmatrix} A & B \\\ C & D \end{bmatrix}^{-1} = \begin{bmatrix} S^{-1} & -S^{-1}BD^{-1} \\\ -D^{-1}CS^{-1} & D^{-1} + D^{-1}CS^{-1}BD^{-1} \end{bmatrix}$$
+$$\begin{bmatrix} A & B \\ C & D \end{bmatrix}^{-1} = \begin{bmatrix} S^{-1} & -S^{-1}BD^{-1} \\ -D^{-1}CS^{-1} & D^{-1} + D^{-1}CS^{-1}BD^{-1} \end{bmatrix}$$
 
 For our earlier matrix, the Schur complement of the bottom right $I$ matrix is $A + uv^T$. The above identity shows that if we can invert the Schur complement then inverting a block matrix is straightforward. Now let's prove the identity:
 $$x = A^{-1}(b - uv^Tx)$$
