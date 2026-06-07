@@ -27,6 +27,10 @@
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
   {{ end }}
 </p>
+{{/* Comments on blog posts only; opt out per-post with `comments = false`. */}}
+{{ if and (eq .Type "blog") (not .Params.menu) (ne .Params.comments false) }}
+  {{ partial "comments.html" . }}
+{{ end }}
 <style>
   /* ASCII directory-tree TOC. Dashed rules match the theme's <hr>; the
      label and tree share a monospace face so the whole block reads like a
@@ -78,6 +82,17 @@
   .post-toc .toc-tree a:focus {
     color: var(--link-color);
     border-bottom-color: var(--link-color);
+  }
+
+  /* Comments sit below the post, separated by the same dashed rule as the TOC. */
+  .post-comments {
+    margin-top: 2.5em;
+    padding-top: 1em;
+    border-top: 1px dashed;
+  }
+  .post-comments h2 {
+    font-size: 1.25em;
+    margin-bottom: 0.75em;
   }
 </style>
 {{ end }}

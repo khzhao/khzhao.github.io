@@ -1,0 +1,36 @@
+{{/*
+  Giscus comments (GitHub Discussions backend).
+
+  Renders only when the giscus repo IDs are configured in hugo.toml under
+  [params.giscus]. Individual posts can opt out with `comments = false` in
+  their front matter.
+
+  Setup steps (one-time):
+    1. Make sure the repo is public.
+    2. Enable the "Discussions" tab on the GitHub repo.
+    3. Install the giscus app: https://github.com/apps/giscus
+    4. Visit https://giscus.app, enter the repo, and copy the generated
+       data-repo-id and data-category-id into [params.giscus] in hugo.toml.
+*/}}
+{{- $g := .Site.Params.giscus -}}
+{{- if and $g $g.repo $g.repoId $g.categoryId -}}
+<section class="post-comments" aria-label="Comments">
+  <h2>Comments</h2>
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ $g.repo }}"
+          data-repo-id="{{ $g.repoId }}"
+          data-category="{{ default "Announcements" $g.category }}"
+          data-category-id="{{ $g.categoryId }}"
+          data-mapping="{{ default "pathname" $g.mapping }}"
+          data-strict="0"
+          data-reactions-enabled="{{ default "1" $g.reactionsEnabled }}"
+          data-emit-metadata="0"
+          data-input-position="{{ default "bottom" $g.inputPosition }}"
+          data-theme="{{ default "preferred_color_scheme" $g.theme }}"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the comments.</noscript>
+</section>
+{{- end -}}

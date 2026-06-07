@@ -3,6 +3,21 @@ locale = 'en-us'
 title = "KZ's Brain Dump"
 theme = 'hugo-bearblog'
 
+# Giscus comments (GitHub Discussions). Fill in repoId and categoryId from
+# https://giscus.app after enabling Discussions and installing the giscus app.
+# Comments stay hidden until both IDs below are set.
+[params.giscus]
+  repo = "khzhao/khzhao.github.io"
+  repoId = "R_kgDOOOsY-w"
+  category = "Announcements"
+  categoryId = "DIC_kwDOOOsY-84C-q94"
+  mapping = "pathname"
+  # Built-in light theme (has visible borders so it stands out from the page).
+  # Works locally and in prod with no external CSS dependency.
+  theme = "light"
+  inputPosition = "bottom"
+  reactionsEnabled = "1"
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
