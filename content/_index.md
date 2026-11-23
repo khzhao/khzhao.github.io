@@ -9,8 +9,8 @@ title = 'Home'
 Hi, I'm Kevin Zhao. This is where I dump everything I find interesting, worth sharing, or confusing at first. I love solving interesting probability, statistics, and machine learning puzzles.
 
 ### Now
-- PhD Student in the @[MAGICS](https://magics.cs.northwestern.edu/) lab at Northwestern, advised by [Zhaoran Wang](https://zhaoranwang.github.io/) and [Han Liu](https://statistics.northwestern.edu/people/faculty/han-liu.html)
 - Quantitative Researcher @[Millennium](https://www.linkedin.com/company/millennium-partners/) in the Riedel Group. One of Millennium's most successful teams of all time. 25+ years. No down years
+- PhD Student in the @[MAGICS](https://magics.cs.northwestern.edu/) lab at Northwestern, advised by [Zhaoran Wang](https://zhaoranwang.github.io/) and [Han Liu](https://statistics.northwestern.edu/people/faculty/han-liu.html)
 
 ### Previously
 - Quantitative Researcher @[Vatic Labs](https://www.linkedin.com/company/vaticlabs/) on the high frequency trading desk
